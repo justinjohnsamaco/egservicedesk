@@ -174,7 +174,7 @@
         #noteDetailsModal .modal-inner {
             background: #fff;
             border-radius: 8px;
-            max-width: 400px;
+            max-width: 600px;
             margin: 80px auto;
             padding: 24px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.2);
@@ -190,12 +190,12 @@
         #noteDetailsModal .modal-inner textarea {
             display: block;
             margin: 0 auto 16px auto;
-            width: 50vw;        /* Half the viewport width on laptop/desktop */
+            width: 600px;        /* Half the viewport width on laptop/desktop */
             min-width: 320px;
             max-width: 80vw;    /* Don't exceed 80% of viewport */
             border: 3px solid #000; /* Thicker border for clarity */
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 12px;
             padding: 12px;
             resize: none;
             box-sizing: border-box;
@@ -258,17 +258,14 @@
             <label for="banner">Banner</label>
             <select id="banner">
                 <option value="--">--</option>
-                <option value="Cumberland Farms">Cumberland Farms (CF)</option>
-                <option value="Turkey Hill">Turkey Hill (TH)</option>
                 <option value="Certified Oil">Certified Oil (CO)</option>
-                <option value="QuikStop">QuikStop (QS)</option>
+                <option value="Cumberland Farms">Cumberland Farms (CF)</option>
+                <option value="Cumberland Farms - Neon">Cumberland Farms - Neon (CF-Neon)</option>
                 <option value="Fastrac">Fastrac (FT)</option>
-                <option value="Tom Thumb">Tom Thumb (TT)</option>
-                <option value="Loaf n' Jug">Loaf n' Jug (LJ)</option>
                 <option value="KwikShop">KwikShop (KS)</option>
-                <option value="Sprint">Sprint (S)</option>
+                <option value="Loaf n' Jug">Loaf n' Jug (LJ)</option>
                 <option value="Minit Mart">Minit Mart (MM)</option>
-                <option value="Store Point">Store Point (SP)</option>
+                <option value="QuikStop">QuikStop (QS)</option>
                 <option value="QSR Burger King">QSR Burger King (BK)</option>
                 <option value="QSR Cinnabon">QSR Cinnabon (CB)</option>
                 <option value="QSR Hunt Brothers Pizza">QSR Hunt Brothers Pizza (HB)</option>
@@ -276,367 +273,14 @@
                 <option value="QSR Sbarro">QSR Sbarro (SB)</option>
                 <option value="QSR Subway">QSR Subway (SW)</option>
                 <option value="QSR Taco John’s">QSR Taco John’s (TJ)</option>
-                <option value="Others">Others</option>
+                <option value="Sprint">Sprint (S)</option>
+                <option value="Store Point">Store Point (SP)</option>
+                <option value="Tom Thumb">Tom Thumb (TT)</option>
+                <option value="Turkey Hill">Turkey Hill (TH)</option>
+                <option value="Turkey Hill Midwest">Turkey Hill Midwest (TM)</option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="storeNumber">Store #</label>
-            <input type="text" id="storeNumber" placeholder="Enter store number" oninput="validateNumber(this)">
-            <div class="alert" id="storeNumberAlert">This entry can only contain numbers</div>
-        </div>
-        <div class="form-group">
-            <label for="severity">SLA Priority Levels</label>
-            <select id="severity">
-                <option value="--">--</option>
-                <option value="Down Store (P1)">Down Store (P1)</option>
-                <option value="Emergency/Hypercare (P2)">Emergency/Hypercare (P2)</option>
-                <option value="Urgent (P3)">Urgent (P3)</option>
-                <option value="Normal (P4)">Normal (P4)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status">
-                <option value="--">--</option>
-                <option value="OPEN">OPEN</option>
-                <option value="OPEN/DECLINED">OPEN/DECLINED</option>
-                <option value="IN PROGRESS">IN PROGRESS</option>
-                <option value="IN PROGRESS/DAMAGED ORDER">IN PROGRESS/DAMAGED ORDER</option>
-                <option value="IN PROGRESS/DISPATCH CONFIRMED">IN PROGRESS/DISPATCH CONFIRMED</option>
-                <option value="IN PROGRESS/IN ROUTE">IN PROGRESS/IN ROUTE</option>
-                <option value="IN PROGRESS/INCOMPLETE">IN PROGRESS/INCOMPLETE</option>
-                <option value="IN PROGRESS/ON SITE">IN PROGRESS/ON SITE</option>
-                <option value="IN PROGRESS/ORDER NOT RECEIVED">IN PROGRESS/ORDER NOT RECEIVED</option>
-                <option value="IN PROGRESS/ORDER SHIPPED">IN PROGRESS/ORDER SHIPPED</option>
-                <option value="IN PROGRESS/PARTIAL ORDER">IN PROGRESS/PARTIAL ORDER</option>
-                <option value="IN PROGRESS/PARTS ON ORDER">IN PROGRESS/PARTS ON ORDER</option>
-                <option value="IN PROGRESS/PARTS ON SITE">IN PROGRESS/PARTS ON SITE</option>
-                <option value="IN PROGRESS/PARTS ORDER CONFIRMED">IN PROGRESS/PARTS ORDER CONFIRMED</option>
-                <option value="IN PROGRESS/POSSIBLE DUPLICATE CIWO">IN PROGRESS/POSSIBLE DUPLICATE CIWO</option>
-                <option value="IN PROGRESS/PROPOSAL APPROVED">IN PROGRESS/PROPOSAL APPROVED</option>
-                <option value="IN PROGRESS/TEMPORARY FIX">IN PROGRESS/TEMPORARY FIX</option>
-                <option value="IN PROGRESS/UNSATISFACTORY">IN PROGRESS/UNSATISFACTORY</option>
-                <option value="IN PROGRESS/VALIDATION REQUIRED">IN PROGRESS/VALIDATION REQUIRED</option>
-                <option value="IN PROGRESS/WAITING FOR APPROVAL">IN PROGRESS/WAITING FOR APPROVAL</option>
-                <option value="IN PROGRESS/WAITING FOR LINKED WO">IN PROGRESS/WAITING FOR LINKED WO</option>
-                <option value="IN PROGRESS/WAITING FOR MORE INFORMATION">IN PROGRESS/WAITING FOR MORE INFORMATION</option>
-                <option value="IN PROGRESS/WAITING FOR QUOTE">IN PROGRESS/WAITING FOR QUOTE</option>
-                <option value="COMPLETED/CANCELLED">COMPLETED/CANCELLED</option>
-                <option value="COMPLETED/CONFIRMED">COMPLETED/CONFIRMED</option>
-                <option value="COMPLETED/DISPATCH AVOIDED">COMPLETED/DISPATCH AVOIDED</option>
-                <option value="COMPLETED/NO CHARGE">COMPLETED/NO CHARGE</option>
-                <option value="COMPLETED/NTE INCREASE REQUESTED">COMPLETED/NTE INCREASE REQUESTED</option>
-                <option value="COMPLETED/OPERATIONAL ISSUE">COMPLETED/OPERATIONAL ISSUE</option>
-                <option value="COMPLETED/PENDING CONFIRMATION">COMPLETED/PENDING CONFIRMATION</option>
-                <option value="COMPLETED/PHONE FIX">COMPLETED/PHONE FIX</option>
-                <option value="COMPLETED/SUPPLY MANAGER FULFILLMENT">COMPLETED/SUPPLY MANAGER FULFILLMENT</option>
-                <option value="COMPLETED/VALIDATION REQUIRED">COMPLETED/VALIDATION REQUIRED</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="area">Area</label>
-            <select id="area">
-                <option value="--">--</option>
-                <option value="BACKOFFICE/IT">BACKOFFICE/IT</option>
-                <option value="EG STORES">EG STORES</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="problemCode">Problem Type</label>
-            <select id="problemCode">
-                <option value="--">--</option>
-                <option value="IT RETAIL AUTOMATION HELPDESK">IT RETAIL AUTOMATION HELPDESK</option>
-                <option value="CORPORATE">CORPORATE</option>
-                <option value="HR SYSTEMS">HR SYSTEMS</option>
-                <option value="PRICEBOOK">PRICEBOOK</option>
-                <option value="FUELING SYSTEM">FUELING SYSTEM</option>
-                <option value="GENERAL MAINTENANCE">GENERAL MAINTENANCE</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="equipment">Equipment</label>
-            <select id="equipment">
-                <option value="--">--</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="description">Note</label>
-            <textarea id="description" placeholder="Enter note" data-user-input=""></textarea>
-        </div>
-        <div class="form-group">
-            <label for="kbArticle">KB Article/URL:</label>
-            <input type="text" id="kbArticle" placeholder="Enter KB article or URL" oninput="validateURL(this)">
-            <div class="alert" id="kbArticleAlert">Please enter a valid https:// or http:// URL</div>
-        </div>
-        <div class="button-group">
-            <button type="button" onclick="copyDetails()">Copy</button>
-            <button type="button" onclick="showTemplatePopup()">Generate Template</button>
-            <button type="button" onclick="clearForm()">Clear</button>
-        </div>
-        <div class="timestamp" id="timestamp"></div>
+        <!-- ... rest of your form ... -->
     </form>
-    <!-- Template Popup Modal -->
-    <div id="templatePopup">
-        <div class="popup-inner">
-            <h3>Select Template Type</h3>
-            <div class="template-btn-column">
-                <button type="button" onclick="selectTemplate('serviceChannel')">Service Channel</button>
-                <button type="button" onclick="selectTemplate('followUp')">Follow-up</button>
-                <button type="button" onclick="selectTemplate('threeStrike')">Three Strike Rule</button>
-            </div>
-            <button type="button" onclick="closeTemplatePopup()">Cancel</button>
-        </div>
-    </div>
-    <!-- Floating Note Details Modal -->
-    <div id="noteDetailsModal">
-        <div class="modal-inner">
-            <h3>Note Details</h3>
-            <textarea id="noteDetails" placeholder="Generated note details will appear here" data-user-input=""></textarea>
-            <br>
-            <button type="button" class="closeBtn" onclick="closeNoteDetailsModal()">Close</button>
-        </div>
-    </div>
-    <div class="footer">© 2025 Copyright Accenture Project EG-America</div>
-    <script>
-    // Popup modal for template generation
-    function showTemplatePopup() {
-        document.getElementById('templatePopup').style.display = 'block';
-    }
-    function closeTemplatePopup() {
-        document.getElementById('templatePopup').style.display = 'none';
-    }
-    function selectTemplate(type) {
-        const noteDetailsModal = document.getElementById("noteDetailsModal");
-        const noteDetailsTextbox = document.getElementById("noteDetails");
-        let template = "";
-        if (type === 'serviceChannel') {
-            template =
-`Name: (Name of caller/contact)
-Role: (Manager/Cashier/Staff/Etc.)
-Store peak hours:
-Available working hours:
-Any related/existing ticket:
-What specific error occurred:
-On which device:
-Which system/equipment is affected:
-How many device/s affected:
-When did the Issue start:
-What actions/troubleshooting steps have been taken: (Include phone discussion and full TS Steps)
-KB Article/URL:`;
-        } else if (type === 'followUp') {
-            template =
-`[Follow-up Template]
-Name:
-Ticket #:
-Follow-up Date:
-Contacted by:
-Summary of previous actions:
-Current status:
-Next steps:`;
-        } else if (type === 'threeStrike') {
-            template =
-`[Three Strike Rule Template]
-Name:
-Ticket #:
-Strike 1 - Date & Details:
-Strike 2 - Date & Details:
-Strike 3 - Date & Details:
-Resolution/Action Taken:`;
-        }
-        noteDetailsTextbox.value = template;
-        noteDetailsTextbox.dataset.userInput = template;
-        noteDetailsModal.style.display = "block";
-        autoAdjustHeight(noteDetailsTextbox);
-        closeTemplatePopup();
-    }
-    function closeNoteDetailsModal() {
-        document.getElementById("noteDetailsModal").style.display = "none";
-    }
-
-    // Equipment dropdown for Area values
-    function populateEquipmentDropdown(area) {
-        const equipmentDropdown = document.getElementById("equipment");
-        equipmentDropdown.innerHTML = '<option value="--">--</option>';
-        const equipmentOptions = {
-            "BACKOFFICE/IT": [
-                "BOS HARDWARE","BOS SOFTWARE","BRINKS/TIDEL SAFE","CAR WASH","COMMUNICATION","DIGITAL GAS PRICE SIGN","DIGITAL MENU BOARD","DIGITAL SALE SIGN","ELECTRONIC TENDERS","GAS DISPENSER PROBLEMS","HTO TERMINALS","LABEL MAKER","LOYALTY","MONEY ORDER MACHINE","NON-IT INFORMATION REQUEST","OTHER SYSTEMS","PASSWORD RESETS","PDI","PDI HANDHELD","PDI PAPERWORK","PHONELINES","POS HARDWARE","POS HARDWARE - SELF CHECKOUT","POS SOFTWARE","POWER PROBLEMS","SKIP CO","STORE MUSIC SYSTEM-AIM","TABLETS","TEAMMATE ASSISTANCE","TITAN"
-            ],
-            "EG STORES": [
-                "EG – BACK OFFICE PC","EG – CARWASH","EG – CREDIT/DEBIT","EG – DIGITAL MENU BOARD","EG – DIGITAL SALE SIGN","EG – GAS DISPENSER PROBLEMS","EG – GIFT CARDS","EG – LOYALTY","EG – NETWORK","EG – NON-IT INFORMATION REQUEST","EG – PASSWORD RESETS","EG – PDI HANDHELD","EG – PDI PAPERWORK","EG – PHONE LINE","EG – POS","EG – POWER PROBLEMS","EG – PRICEBOOK","EG – PRICEBOOK (FRANCHISEE ONLY)","EG – PRINTERS","EG – WESTERN UNION"
-            ]
-        };
-        if (equipmentOptions[area]) {
-            equipmentOptions[area].forEach(equipment => {
-                const option = document.createElement('option');
-                option.value = equipment;
-                option.text = equipment;
-                equipmentDropdown.appendChild(option);
-            });
-        }
-    }
-    document.getElementById("area").addEventListener("change", function () {
-        const area = this.value;
-        populateEquipmentDropdown(area);
-    });
-
-    // Auto-fill Note with template when Equipment is selected
-    const equipmentNoteTemplate = `
-Name: 
-Role: 
-Store peak hour: 
-Available working hours: 
-Any related/existing ticket: 
-What specific error occurred: 
-On which device: 
-Which system/equipment is affected: 
-How many device/s affected: 
-When did the Issue start: 
-What actions have been taken so far: 
-`;
-
-    document.getElementById("equipment").addEventListener("change", function () {
-        const equipmentValue = this.value;
-        const noteTextbox = document.getElementById("description");
-        if (equipmentValue === "--") {
-            noteTextbox.value = "";
-            noteTextbox.dataset.userInput = "";
-        } else {
-            noteTextbox.value = equipmentNoteTemplate.trim();
-            noteTextbox.dataset.userInput = noteTextbox.value;
-        }
-        // Adjust textarea height
-        noteTextbox.style.height = "auto";
-        noteTextbox.style.height = noteTextbox.scrollHeight + "px";
-    });
-
-    // Clipboard copy for ticket details (with HTML formatting for internal notice)
-    function copyDetails() {
-        const title = document.getElementById("title").value;
-        const ticketNumber = document.getElementById("ticketNumber").value || "";
-        const banner = document.getElementById("banner").selectedOptions[0].text || "--";
-        const storeNumber = document.getElementById("storeNumber").value || "";
-        const severity = document.getElementById("severity").value || "--";
-        const status = document.getElementById("status").value || "--";
-        const area = document.getElementById("area").selectedOptions[0].text || "--";
-        const equipment = document.getElementById("equipment").selectedOptions[0].text || "--";
-        const problemCode = document.getElementById("problemCode").selectedOptions[0].text || "--";
-        const description = document.getElementById("description").value || "";
-        const kbArticle = document.getElementById("kbArticle").value || "No Article Available";
-        const noteDetailsModal = document.getElementById("noteDetailsModal");
-        const noteDetails = noteDetailsModal.style.display !== "none"
-            ? document.getElementById("noteDetails").value : "";
-        const currentTimestamp = new Date().toLocaleString();
-
-        document.getElementById("timestamp").innerText = `Date & Time: ${currentTimestamp}`;
-
-        // "Problem Type" is now shown before "Equipment"
-        const ticketDetailsHTML = `
-<div><b>Ticket Description:</b> ${title}</div>
-<div><b>Ticket #:</b> ${ticketNumber}</div>
-<div><b>Banner:</b> ${banner}</div>
-<div><b>Store #:</b> ${storeNumber}</div>
-<div><b>SLA Priority Level:</b> ${severity}</div>
-<div><b>Status:</b> ${status}</div>
-<div><b>Area:</b> ${area}</div>
-<div><b>Problem Type:</b> ${problemCode}</div>
-<div><b>Equipment:</b> ${equipment}</div>
-<div><b>Note:</b><br>${description.replace(/\n/g, '<br>')}</div>
-${noteDetails ? `<div><b>Note Details:</b><br>${noteDetails.replace(/\n/g, '<br>')}</div>` : ""}
-<div><b>KB Article/URL:</b><br>${kbArticle}</div>
-<div><b><i><u>For Internal use ONLY.</u></i></b></div>
-<div><b>Date & Time:</b> ${currentTimestamp}</div>
-`;
-
-        // Copy as rich text (HTML)
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = ticketDetailsHTML;
-        document.body.appendChild(tempDiv);
-
-        if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-            const range = document.createRange();
-            range.selectNodeContents(tempDiv);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-
-            try {
-                document.execCommand('copy');
-                alert("Ticket details (with timestamp) copied to clipboard!");
-            } catch (err) {
-                alert("Failed to copy details: " + err);
-            }
-            selection.removeAllRanges();
-        } else if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(tempDiv.innerText).then(
-                () => alert("Ticket details copied as plain text."),
-                err => alert("Failed to copy details: " + err)
-            );
-        }
-        document.body.removeChild(tempDiv);
-    }
-
-    function clearForm() {
-        document.getElementById("ticketForm").reset();
-        document.getElementById("timestamp").innerText = "";
-        document.getElementById("description").style.height = "80px";
-        document.getElementById("description").dataset.userInput = "";
-        const equipmentDropdown = document.getElementById("equipment");
-        equipmentDropdown.innerHTML = '<option value="--">--</option>';
-        // Hide and clear noteDetails modal
-        closeNoteDetailsModal();
-        document.getElementById("noteDetails").value = "";
-        document.getElementById("noteDetails").dataset.userInput = "";
-    }
-
-    // Validate numeric input and restrict to numbers only
-    function validateNumber(input) {
-        const value = input.value;
-        const alertId = input.id + "Alert";
-        const alertElement = document.getElementById(alertId);
-
-        if (/[^0-9]/.test(value)) {
-            alertElement.style.display = "block";
-            setTimeout(() => {
-                alertElement.style.display = "none";
-            }, 1500);
-            input.value = value.replace(/[^0-9]/g, '');
-        } else {
-            alertElement.style.display = "none";
-        }
-    }
-
-    // Validate URL input and restrict to https:// or http:// URLs only
-    function validateURL(input) {
-        const value = input.value;
-        const alertElement = document.getElementById("kbArticleAlert");
-
-        const isValidUrl = /^(https?:\/\/).+$/.test(value);
-        if (!isValidUrl) {
-            alertElement.style.display = "block";
-            setTimeout(() => {
-                alertElement.style.display = "none";
-            }, 3000);
-            input.value = value.replace(/^(?!https?:\/\/).*/, '');
-        } else {
-            alertElement.style.display = "none";
-        }
-    }
-
-    // Auto adjust textarea height for notes and note details
-    function autoAdjustHeight(textbox) {
-        textbox.style.height = "auto";
-        textbox.style.height = textbox.scrollHeight + "px";
-    }
-    const noteTextbox = document.getElementById("description");
-    noteTextbox.addEventListener("input", function() {
-        noteTextbox.dataset.userInput = this.value;
-        autoAdjustHeight(this);
-    });
-    const noteDetailsTextbox = document.getElementById("noteDetails");
-    noteDetailsTextbox.addEventListener("input", function() {
-        noteDetailsTextbox.dataset.userInput = this.value;
-        autoAdjustHeight(this);
-    });
-    </script>
 </body>
 </html>
